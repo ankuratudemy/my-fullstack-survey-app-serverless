@@ -1,0 +1,28 @@
+component: aws-dynamodb
+name: survey
+
+inputs:
+  name: ${name}-${stage}
+  region: ap-south-1
+  # Don't delete the Database Table if "serverless remove" is run
+  deletionPolicy: retain
+  # Simple, single-table design
+  attributeDefinitions:
+    - AttributeName: Email
+      AttributeType: S
+    - AttributeName: Phone
+      AttributeType: S
+  keySchema:
+    - AttributeName: Email
+      KeyType: HASH
+    - AttributeName: Phone
+      KeyType: RANGE
+  globalSecondaryIndexes:
+    - IndexName: gsi1
+      KeySchema:
+        - AttributeName: Phone
+          KeyType: HASH
+        - AttributeName: Email
+          KeyType: RANGE
+      Projection:
+        ProjectionType: ALL
