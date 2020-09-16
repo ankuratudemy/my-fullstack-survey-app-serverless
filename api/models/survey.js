@@ -1,5 +1,5 @@
 /**
- * Model: Users
+ * Model: Survey
  */
 
 const AWS = require('aws-sdk')
@@ -37,8 +37,8 @@ const register = async(survey = {}) => {
   }
 
   const existingPhoneno = await getByPhoneno(survey.phoneno)
-  if (existingEmail) {
-    throw new Error(`A user with Phone No. "${survey.email}" is already registered`)
+  if (existingPhoneno) {
+    throw new Error(`A user with Phone No. "${survey.phoneno}" is already registered`)
   }
 
 

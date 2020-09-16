@@ -7,6 +7,7 @@ import {
 //import Home from './pages/Home/Home'
 //import Auth from './pages/Auth/Auth'
 import Survey from './pages/Survey/Survey'
+import ThankYou from './pages/Thank-You/Thank-you'
 //import Dashboard from './pages/Dashboard/Dashboard'
 //import { getSession } from './utils'
 
@@ -30,13 +31,19 @@ export default class App extends Component {
           {/* <Route path='/register'>
             <Auth />
           </Route> */}
-          <Route path='/*'>
+          <Route exact path='/'>
             <Survey />
+          </Route>
+
+          <Route path='/thank-you' exact>
+            <ThankYou />
           </Route>
 
           {/* <Route path='/login'>
             <Auth />
           </Route> */}
+
+          
 
           {/* <PrivateRoute
             exact

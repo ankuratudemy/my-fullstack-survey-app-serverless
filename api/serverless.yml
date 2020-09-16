@@ -1,5 +1,5 @@
 component: express
-name: survey-api
+name: api
 
 inputs:
   # Express application source code.

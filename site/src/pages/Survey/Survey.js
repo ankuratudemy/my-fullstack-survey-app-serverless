@@ -46,12 +46,12 @@ class Survey extends Component {
   /**
    * Handles a form change
    */
-  handleFormTypeChange(type) {
-    this.setState({ state: type },
-      () => {
-        this.props.history.push(`/${type}`)
-      })
-  }
+  // handleFormTypeChange(type) {
+  //   this.setState({ state: type },
+  //     () => {
+  //       this.props.history.push(`/${type}`)
+  //     })
+  // }
 
   /**
    * Handle text changes within form fields
@@ -122,7 +122,7 @@ class Survey extends Component {
     // user = user.user
     // saveSession(user.id, user.email, token.token)
 
-    //window.location.replace('/')
+    this.props.history.push('/thank-you')
   }
 
   render() {

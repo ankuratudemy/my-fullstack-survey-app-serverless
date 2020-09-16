@@ -1,6 +1,5 @@
 component: aws-dynamodb
-name: survey
-
+name: database
 inputs:
   name: ${name}-${stage}
   region: ap-south-1
@@ -10,17 +9,17 @@ inputs:
   attributeDefinitions:
     - AttributeName: Email
       AttributeType: S
-    - AttributeName: Phone
+    - AttributeName: Phoneno
       AttributeType: S
   keySchema:
     - AttributeName: Email
       KeyType: HASH
-    - AttributeName: Phone
+    - AttributeName: Phoneno
       KeyType: RANGE
   globalSecondaryIndexes:
     - IndexName: gsi1
       KeySchema:
-        - AttributeName: Phone
+        - AttributeName: Phoneno
           KeyType: HASH
         - AttributeName: Email
           KeyType: RANGE

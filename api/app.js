@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 //const passport = require('passport')
 const {
-  users
+  survey
 } = require('./controllers')
 
 /**

@@ -1,4 +1,4 @@
-const users = require('./survey')
+const survey = require('./survey')
 
 module.exports = {
   survey,
