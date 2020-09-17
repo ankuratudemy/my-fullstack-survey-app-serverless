@@ -98,11 +98,11 @@ class Survey extends Component {
       })
     }
 
-    let token
+    let message
     try {
-      token = await submitSurvey(this.state.formName,this.state.formEmail, this.state.formPhoneno)
+      message = await submitSurvey(this.state.formName,this.state.formEmail, this.state.formPhoneno)
     } catch (error) {
-      console.log(error)
+      console.log("Message",message)
       if (error.message) {
         this.setState({
           formError: error.message,
@@ -110,7 +110,7 @@ class Survey extends Component {
         })
       } else {
         this.setState({
-          formError: 'Sorry, something unknown went wrong.  Please try again.',
+          formError: message +" Please try again",
           loading: false
         })
       }
